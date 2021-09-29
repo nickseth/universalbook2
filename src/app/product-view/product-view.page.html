@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title style="text-align: center;">Product Details</ion-title>
+
+      <ion-icon *ngIf="wishlistData; else noWishlist" [style.color]="'#EF3B51'" name="heart" (click)="deletewishlist()"  
+      style="width:30px;height:30px;padding:10px;"  slot="end" 
+      classs="iconFill"></ion-icon>
+  
+    <ng-template #noWishlist>
+      <ion-icon name="heart-outline" (click)="setwishlist()" 
+       style="width:30px;height:30px;padding:10px;"  slot="end"></ion-icon>
+      </ng-template>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+ <!-- <div style ="width:100px;margin:10px">
+        <img src="{{data.images[0].src}}" >
+      </div>   -->
+  
+      <ion-grid class="book-detail-section">
+    <ion-row style="width: 100%;padding:10px;margin-bottom:10px">
+  <ion-col id="book-detail-img" >
+       <ion-card style="width: 100px;height: 130px;">
+        <img src="{{this.img_src}}" style="width: 100px;height: 130px;">
+       </ion-card> 
+  </ion-col>
+  <ion-col style="padding:20px">
+    <div style="margin-bottom: 10px;"><strong>{{book_name}}</strong></div>
+   <div style="margin-bottom: 10px;" *ngIf="price; else noPrice"><strong >Price : {{price}}</strong><small>Rs</small></div>
+ <ng-template #noPrice>
+<small style="color:rgb(5, 44, 5)">Free</small>
+</ng-template>
+<br>
+
+  <ion-button size="small" color="success" shape="round" *ngIf="this.file_exist_status; else nofile_status" (click)="readFile(this.book_id)"><small>Open</small></ion-button> 
+  <ng-template #nofile_status>
+    <!-- downloadFileone(this.fileurl,this.filename) -->
+    <ion-button size="small" color="primary" shape="round" (click)="downloadFileone(this.fileurl,this.filename)" disabled={{buttonDisabled}}><small>Download</small></ion-button>
+    <div class="progress-outer" [style.display]="valueDisplay">
+      <div class="progress-inner" [style.width]="progress + '%'">
+          {{progress}}%
+      </div>
+  </div>
+  </ng-template>
+</ion-col>
+    </ion-row>
+<ion-row style="width: 100%;padding-left:10px;padding-right:10px;">
+  <div><b>Book Description</b></div>
+  </ion-row>
+  <hr color="dark" style="margin:10px;" /> 
+  <ion-row style="width: 100%;padding-left:10px;padding-right:10px;padding-bottom:10px;">
+  <div style="margin-bottom: 10px;" [innerHTML]="description" *ngIf="description; else noDescription"></div>
+  <ng-template #noDescription>
+    <small>No description available</small>
+    </ng-template>
+
+</ion-row>
+<ion-row style="width: 100%;padding-left:10px;padding-right:10px;">
+  <div><b>More from Author</b></div>
+  </ion-row>
+<hr color="dark" style="margin:10px;"/>
+</ion-grid>
+</ion-content>
+

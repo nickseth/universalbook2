@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-content [fullscreen]="true" class="edit-profile_section">
+    <ion-grid>
+      
+      <ion-row>
+        <ion-col>
+          <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" method="post">
+            <ion-row>
+              <ion-col>
+              <div class="img-wrap">
+                  <img src="{{this.croppedImagepath}}" alt="uyuu" >
+                  <ion-item class="img_icon-wrap" (click)="selectImage()">
+                 <ion-icon name="camera-outline"></ion-icon>
+                 </ion-item>
+                </div>
+              
+              </ion-col>
+            </ion-row>
+            <!-- <div style=" display: flex;
+            flex-direction: column;text-align: center; justify-content: center;" >
+             <input type="text" formControlName="username" [(ngModel)]="username" readonly>
+            </div> -->
+            <div class="input-wrap">
+              <p>
+                <label for="first_name">First name</label><br>
+            <input type="text" formControlName="first_name" [(ngModel)]="first_name">
+              </p>
+
+              <p>
+                <label for="last_name">Last name</label><br>
+            <input type="text" formControlName="last_name" [(ngModel)]="last_name">
+              </p>
+            </div>
+             
+            <div class="input-wrap">
+              <p>
+                <label for="email">Email </label><br>
+            <input type="text" formControlName="email" [(ngModel)]="email">
+              </p>
+          
+              <p>
+                <label for="oldPassword">Old Password</label><br>
+            <input type="text" formControlName="oldPassword">
+              </p>
+            </div>
+            <div class="input-wrap">
+              <p>
+                <label for="newPassword">New Password</label><br>
+            <input type="text" formControlName="newPassword">
+              </p>
+              <p>
+                <label for="ConfiPassword">Confirm Password</label><br>
+            <input type="text" formControlName="ConfiPassword">
+              </p>
+            </div>
+          
+            <ion-row>
+              <ion-col class="cta">
+                <button type="submit" expand="block">Update Profile</button>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+

@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'FontsFree-Net-George';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/FontsFree-Net-George.ttf');
+  }
+  @font-face {
+    font-family: 'Lato-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/Lato-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'font/Lato-Light';
+    font-style: normal;
+    font-weight: light;
+    src: url('../../assets/font/Lato-Light.ttf');
+  }
+  @font-face {
+    font-family: 'Lato-Black';
+    font-style: normal;
+    font-weight: black;
+    src: url('../../assets/font/Lato-Black.ttf');
+  }
+  @font-face {
+    font-family: 'Lato-Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../../assets/font/Lato-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'Lato-Thin';
+    font-style: normal;
+    font-weight: thin;
+    src: url('../../assets/font/Lato-Thin.ttf');
+  }
+  @font-face {
+    font-family: 'LibreBaskerville-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/LibreBaskerville-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Merriweather-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/Merriweather-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'times_new_roman';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/times_new_roman.ttf');
+  }
+  @font-face {
+    font-family: 'Spectral-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../assets/font/Spectral-Regular.ttf');
+  }

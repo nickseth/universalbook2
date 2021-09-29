@@ -1,0 +1,7 @@
+{
+  "name": "Universal Book",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

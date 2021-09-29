@@ -1,0 +1,10 @@
+
+.title-wrap {
+    font-size: var(--small);
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}

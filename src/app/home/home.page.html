@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Universal Book
+    </ion-title>
+    <!-- <ion-buttons slot="end" [routerLink]="['/login']">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="this.networkstatus else netproblem">
+  <ion-refresher slot="fixed" (ionRefresh)="getdataRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div>
+    <div class="scroll-1" scrollX='true'>
+      <div class="scroll-item" *ngFor="let item of result">
+        <ion-card class="items_img" (click)="viewItem(item.id)">
+          <img src="{{item.images[0].src}}">
+        </ion-card>
+      </div>
+    </div>
+    <h5>Categories</h5>
+    <div class="scroll-2" scrollX='true'>
+      <div class="scroll-item2" *ngFor="let item_category of result_category">
+        <div class="items_img2">
+          <ion-chip (click)="viewCategory(item_category.id,item_category.name)">
+            <ion-label color="white"><small>{{item_category.name}}</small></ion-label>
+          </ion-chip>
+        </div>
+      </div>
+    </div>
+    <h5>Recentely Added</h5>
+    <ion-row *ngFor="let item of result" (click)="viewItem(item.id)">
+      <ion-col size="4" size-sm>
+        <ion-card style="width: 122px;height:152px">
+          <img src="{{item.images[0].src}}" style="width: 100px;height:128px">
+        </ion-card>
+      </ion-col>
+      <ion-col size="8" size-sm>
+        <h6>{{item.name}}</h6>
+        <div class="comment_des" [innerHTML]="item.short_description"></div>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+<ng-template #netproblem>
+  <div style="text-align: center; padding-top:20%">
+    <p>Internet Connection Problem</p>
+  </div>
+</ng-template>
+</ion-content>

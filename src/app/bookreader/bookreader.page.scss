@@ -1,0 +1,515 @@
+ion-content{
+  --ion-background-color:#ffffff;
+  --ion-text-color:#000000;
+  --ion-toolbar-background: #f7f1f1;
+  --ion-item-background:#fcfcfc;
+  
+}
+
+  .lite_blue{
+    --ion-background-color:rgb(17, 27, 33);
+    --ion-text-color:rgb(232, 232, 232);
+    --ion-toolbar-background: rgb(13, 21, 26);
+    --ion-item-background:rgb(17, 27, 33);
+  }
+  .lite_dark{
+    
+    --ion-background-color:rgb(17, 17, 17);
+    --ion-text-color:rgb(245, 222, 179);
+    --ion-toolbar-background: rgb(10, 10, 10);
+    --ion-item-background:rgb(17, 17, 17);
+  }
+  .lite_white{
+    --ion-background-color:rgb(245, 222, 179);
+    --ion-text-color:rgb(0, 0, 0);
+    --ion-toolbar-background: rgb(247, 220, 171);
+    --ion-item-background:rgb(245, 222, 179);
+  }
+  
+  .blue{
+    --ion-background-color:rgb(51, 51, 51);
+    --ion-text-color:rgb(238, 238, 238);
+    --ion-toolbar-background: rgb(44, 44, 44);
+    --ion-item-background:rgb(51, 51, 51);
+  }
+  .dark2{
+    --ion-background-color:#111111;
+    --ion-text-color:#ffffff;
+    --ion-toolbar-background: #070707;
+    --ion-item-background:#111111;
+  }
+  
+  
+  
+  .show-less {
+    height: 3.5rem;
+    overflow: hidden;
+    // padding: 1rem;
+  }
+  
+  
+  #titlebar {
+    height: 12%;
+    min-height: 20px;
+    padding: 10px;
+    top: 0;
+    position: relative;
+    color: #4f4f4f;
+    font-weight: 100;
+    // font-family: Georgia, "Times New Roman", Times, serif;
+    opacity: .5;
+    text-align: center;
+  }
+  
+  #book-title {
+    font-weight: 600;
+    font-size:16px
+  }
+  
+  #title-seperator {
+    display: none;
+  }
+  
+  #viewer {
+    width: calc(80vw - 125px);
+    height: calc(80vh - 96px);
+    margin: 0 auto;
+    margin-right: auto;
+    max-width: 1250px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    transition: margin-right .2s;
+  }
+  
+  .nav-open #viewer {
+    margin-right: 50px;
+  }
+  
+  #viewer iframe{
+    border: none;
+    
+  }
+  
+  
+  #prev {
+    left: 40px;
+  }
+  
+  .nav-open #prev {
+    left: 310px;
+    transition: left .2s;
+  }
+  
+  #next {
+    right: 40px;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    font-size: 64px;
+    color: #E2E2E2;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .arrow:hover {
+    color: #777;
+  }
+  
+  .arrow:active,
+  .arrow.active {
+    color: #000;
+  }
+  
+  
+  
+  #title-controls {
+    float: right;
+  }
+  
+  
+  
+  #divider {
+    position: absolute;
+    width: 1px;
+    border-right: 1px #000 solid;
+    height: 80%;
+    z-index: 1;
+    left: 50%;
+    margin-left: -1px;
+    top: 10%;
+    opacity: .15;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 1);
+    display: none;
+  }
+  
+  #divider.show {
+    display: block;
+  }
+  
+  
+  .view {
+    width: 300px;
+    height: 100%;
+    display: none;
+    padding-top: 50px;
+    overflow-y: auto;
+  }
+  
+  
+  
+  @media only screen and (max-width: 1040px) {
+    #viewer{
+      width: 50%;
+    }
+    
+    #divider,
+    #divider.show {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    #viewer{
+      width: 60%;
+    
+    }
+    
+    #prev {
+      left: 20px;
+    }
+    
+    #next {
+      right: 20px;
+    }
+  }
+  
+ 
+  
+  /* For iPad portrait layouts only */
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #viewer iframe {
+      width: 460px;
+      height: 740px;
+    }
+  }
+  /*For iPad landscape layouts only */
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+    #viewer iframe {
+      width: 460px;
+      height: 415px;
+    }
+  }
+  /* For iPhone portrait layouts only */
+  @media only screen and (max-device-width: 480px) and (orientation: portrait) {
+    #viewer {
+      width: 256px;
+      height: 432px;
+    }
+    #viewer iframe {
+      width: 256px;
+      height: 432px;
+    }
+  }
+  /* For iPhone landscape layouts only */
+  @media only screen and (max-device-width: 480px) and (orientation: landscape) {
+    #viewer iframe {
+      width: 256px;
+      height: 124px;
+    }
+  }
+  
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    
+    
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+    
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    
+    /* you can be more comfortable with increased icons size */
+    font-size: 112%;
+  }
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  
+  .color-theme
+  {
+    box-shadow: var(--box-shadow2);
+    border: 1px solid var(--gray);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px 14px;
+  }
+  
+  
+  .theme-wrap {
+    b {
+      font-size: var(--x-large);
+      font-style: italic;
+      border-bottom: 2px solid var(--gray);
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+    .theme-container{
+      height: 50px;
+      padding: 15px 5px;
+      margin-bottom: 70px;
+    }
+    
+  }
+  .font-wrap {
+    b {
+      font-size: var(--x-large);
+      font-style: italic;
+      border-bottom: 2px solid var(--gray);
+      letter-spacing: 2px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .font-container {
+      ion-chip {
+        background-color: var(--nevyblue);
+        box-shadow: var(--box-shadow2);
+        width: 45px;
+        height: 45px;
+        color: var(--white);
+        text-align: center;
+        border-radius: 50%;
+        padding: 0px 18px;
+        font-size: var(--small);
+        vertical-align: middle;
+      }
+      ion-chip.ion-activated{
+        background-color: var(--gray);
+        color: var(--black);
+      } 
+    }
+  }
+  .font-family_wrap {
+    b {
+      font-size: var(--x-large);
+      font-style: italic;
+      border-bottom: 2px solid var(--gray);
+      letter-spacing: 2px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .font-family_container {
+      ion-chip {
+        text-align: center;
+        vertical-align: middle;
+        font-size: var(--small);
+        background-color: var(--nevyblue);
+        color: var(--white);
+        padding: 20px;
+        box-shadow: var(--box-shadow2);
+        border-radius: 25px;
+      }
+    }
+  }
+  .line-spacing_wrap {
+    b{
+      font-size: var(--x-large);
+      font-style: italic;
+      border-bottom: 2px solid var(--gray);
+      letter-spacing: 2px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    ion-chip {
+      background-color: var(--nevyblue);
+      box-shadow: var(--box-shadow2);
+      width: 45px;
+      height: 45px;
+      color: var(--white);   
+      border-radius: 50%;
+      // padding: 0px 18px;
+      vertical-align: middle;
+      ion-label {
+        font-size: var(--small);
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 3px;
+      }
+    }
+  }
+  ion-menu {
+    ion-col {
+      border: 1px solid var(--blue);
+      text-align: center;
+    }
+    ion-icon {
+      font-size: var(--x-large);
+      color: var(--blue);
+      padding: 5px;
+    }
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border-top: none;
+      border: 1px solid var(--nevyblue);
+    }
+  
+  }
+ ::ng-deep ion-item {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--nevyblue);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+::ng-deep .toolbar-background {
+  background-color: red;
+}
+
+@media only screen and (max-width: 480px) {
+ ::ng-deep #next[_ngcontent-lho-c138] {
+    right: 15% !important;
+}
+::ng-deep #prev[_ngcontent-lho-c138] {
+  left: 15% !important;
+  z-index: 99;
+}
+}
+
+ul#highlights {
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+  padding: 20px;
+  list-style-type: none;
+  position: relative;
+}
+ul#highlights li {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+ul#highlights li a {
+  text-transform: lowercase;
+}
+ul#highlights li .cross-btn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 3px 10px;
+  margin: 10px 0;
+}
+div#Bookmark {
+  border: none;
+}
+
+@font-face {
+  font-family: 'FontsFree-Net-George';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/FontsFree-Net-George.ttf');
+}
+@font-face {
+  font-family: 'Lato-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: 'Lato-Light';
+  font-style: normal;
+  font-weight: light;
+  src: url('../../assets/font/Lato-Light.ttf');
+}
+@font-face {
+  font-family: 'Lato-Black';
+  font-style: normal;
+  font-weight: black;
+  src: url('../../assets/font/Lato-Black.ttf');
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../../assets/font/Lato-Bold.ttf');
+}
+@font-face {
+  font-family: 'Lato-Thin';
+  font-style: normal;
+  font-weight: thin;
+  src: url('../../assets/font/Lato-Thin.ttf');
+}
+@font-face {
+  font-family: 'LibreBaskerville-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/LibreBaskerville-Regular.ttf');
+}
+@font-face {
+  font-family: 'Merriweather-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/Merriweather-Regular.ttf');
+}
+@font-face {
+  font-family: 'times_new_roman';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/times_new_roman.ttf');
+}
+@font-face {
+  font-family: 'Spectral-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/font/Spectral-Regular.ttf');
+}

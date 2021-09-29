@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Notes</ion-title>
+<ion-buttons *ngIf="this.title1; else notlable" slot="end">
+  <ion-button color="danger" (click)="deleteNotes(this.token,this.notes_id)">Delete</ion-button>
+  <ion-button (click)="updateNotes(this.token,this.notes_id)">Update</ion-button>
+</ion-buttons>
+<ng-template #notlable>
+  <ion-buttons slot="end">
+    <ion-button (click)="createNew(this.token)">Create</ion-button> 
+  </ion-buttons>
+</ng-template>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div *ngIf="this.title1; else notitle" backgroundcolor="primary">
+  <div contenteditable="true" style="padding:10px;" data-text="Enter Title Here" id="updatetitle">{{this.title1}}</div>
+  <div contenteditable="true" style="padding:10px;height: 100%; width: 100%;" data-text="Enter Description Here" id="updatecontent">{{this.notes_text}}</div>
+</div>
+<ng-template #notitle>
+  <div contenteditable="true"style="padding:10px;" data-text="Enter Title Here" id="newtitle"></div>
+  <div contenteditable="true" style="padding:10px;height: 100%; width: 100%;" data-text="Enter Description Here" id="newcontent"></div>
+  </ng-template>
+
+</ion-content>
+
+
+
+	
+
