@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">{{this.categorytitle}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid >
+    <ion-row *ngFor="let item of data" (click)="viewItem(item.id)">
+      <ion-col size="4" size-sm>
+        <div style ="width:100px;margin:10px">
+          <img src="{{item.images[0].src}}" style="width: 100px;">
+        </div>
+      </ion-col>
+      <ion-col size="8" size-sm>
+        <h6 >{{item.name}}</h6>
+        <div class="comment_des" [innerHTML]="item.short_description"></div>
+        </ion-col> 
+    </ion-row>
+    </ion-grid>
+  
+</ion-content>
+

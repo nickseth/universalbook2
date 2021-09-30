@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" method="post">
+    <div class="form-wrap"><img src="../../assets/open-book.jpg" alt=""></div>
+
+    <p>
+      <label for="fname">First name</label><br>
+  <input type="text" formControlName="fname">
+    </p>
+    <p>
+      <label for="lastname">Last name</label><br>
+  <input type="text" formControlName="lname">
+    </p>
+    <p>
+      <label for="fname">Email Id</label><br>
+  <input type="email" formControlName="email">
+    </p>
+    <p>
+      <label for="password">Password</label><br>
+  <input type="password" formControlName="password">
+    </p>
+    <p>
+      <label for="conpassword">Confirm Password</label><br>
+  <input type="password" formControlName="conpassword">
+    </p>
+    <ion-row>
+      <ion-col class="cta">
+        <button type="submit" (click)="submitForm()" expand="block">Sign Up</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

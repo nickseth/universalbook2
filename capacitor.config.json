@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.Universalbook",
+	"appName": "Universal Book",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

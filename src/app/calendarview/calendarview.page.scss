@@ -1,0 +1,67 @@
+.Calender-Section {
+    
+    .cla-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+     ::ng-deep table thead tr th {
+        font-size: var(--large);
+        text-transform: uppercase;
+        background-color: var(--gray);
+    }
+        ion-card-title {
+            font-size: var(--large);
+            text-align: center;
+        }
+        .right-btn ion-button {
+            float: right;
+        }
+        ion-input {
+            margin-bottom: 20px;
+        }
+      ::ng-deep  input.native-input {
+         border: 1px solid var(--gray);
+         box-shadow: var(--box-shadow2);
+         padding: 10px;
+        }
+        ::ng-deep .item-native {
+            border-bottom: unset;
+        }
+    }
+    ::ng-deep .weekview-allday-label {
+        text-transform: capitalize;
+    }
+    ::ng-deep .picker-wrapper {
+        top: 0;
+        padding: 10px;
+        border-radius: 5px !important;
+        border: 1px solid var(--gray);
+    }
+    ::ng-deep .picker-toolbar {
+        display: flex;
+        justify-content: space-between !important;
+        vertical-align: bottom;
+        flex-direction: row-reverse;
+    }
+    ::ng-deep .picker-toolbar-button.sc-ion-picker-md {
+        box-shadow: var(--box-shadow2);
+        padding: 5px;
+        border: 1px solid var(--black);
+        text-align: center;
+        margin: 5px;
+    }
+    ::ng-deep button.picker-button {
+        height: unset !important;
+        color: var(--black) !important;
+        font-weight: bold !important;
+    }
+    ::ng-deep .picker-columns {
+        border: 1px solid var(--blue);
+    }
+    ::ng-deep .picker-col {
+        border-right: 1px solid var(--blue);
+    }
+    ::ng-deep .picker-col:last-child {
+        border-right: unset;
+    }

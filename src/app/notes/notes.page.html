@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Notes</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button [routerLink]="['/readnote']"  >Add Notes</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="getUsersList($event,this.token)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of notes_data; let i = index">
+        <ion-card (click)="viewItem(i,item.id)">
+          <ion-card-header>
+            {{item.notes_title}}
+          </ion-card-header>
+          <ion-card-content>
+            <p> {{item.notes_desc}}</p>
+            <ion-buttons slot="start">
+              <!-- <ion-icon name="open-outline" slot="start" ></ion-icon> -->
+              <!-- <ion-icon name="create-outline" slot="end"
+                (click)="editNotesModel(i,item.title,item.description,item.notes_id)"></ion-icon>
+              <ion-icon name="trash-outline" slot="end" (click)="deleteItem(i,item.id)"></ion-icon> -->
+            </ion-buttons>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

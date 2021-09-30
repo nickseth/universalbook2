@@ -1,0 +1,27 @@
+.comment_des{
+    max-width: 200px;
+   // white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+    text-overflow: ellipsis;
+ }
+ ion-row {
+    display: flex;
+    align-items: center;
+     img {
+         box-shadow: var(--box-shadow2);
+     }
+     h6 {
+         font-size: var(--large);
+         color: var(--black);
+         letter-spacing: 2px;
+         font-weight: 600;
+     }
+    ::ng-deep p {
+        font-size: 14px;
+        color: var(--nevyblue);
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+ }

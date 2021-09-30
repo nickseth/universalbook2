@@ -1,0 +1,88 @@
+form {
+    padding: 20px;
+    box-shadow: var(--box-shadow4);
+    margin: 17px;
+    border: 1px solid var(--gray);
+}
+.acc-create-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+a.small-text {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 14px;
+}
+.small-text:hover {
+    color: var(--blue);
+}
+.user-icon {
+    text-align: center;
+    ion-icon {
+        font-size: 50px;
+        fill: darkblue;
+    }
+}
+
+ion-item {
+    ion-icon {
+        font-size: 20px;
+        filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
+    }
+}
+::ng-deep .dark input {
+    color: #000;
+}
+::ng-deep .dark form label {
+    color: var(--white);
+}
+::ng-deep .dark form .acc-create-wrap a {
+    color: var(--white) !important;
+}
+.acc-create-wrap a{
+    font-size: var(--x-small);
+    font-weight: 600;
+    color: var(--blue);
+}
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    margin: 10px 0;
+}
+label {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--black);
+}
+ion-title.md.title-default.hydrated {
+    color: var(--black);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.cta {
+    text-align: center;
+    button {
+        background-color: var(--blue);
+        padding: 13px 40px;
+        color: var(--white);
+        font-size: var(--small);
+        border-radius: 25px;
+        font-weight: 700;
+        &:hover {
+            box-shadow: var(--box-shadow2);
+        }
+    }
+   
+}
+
+::ng-deep .dark .cta button {
+    color: var(--white);
+} 

@@ -1,0 +1,243 @@
+<ion-menu menuId="main-menu" content-id="main" side="end">
+  <ion-header>
+    <ion-row class="tab">
+      <ion-col size="4"  class="tablinks" id="defaultOpen"
+        (click)="openCity(event, 'chapter')">
+        <ion-icon name="book-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="4"  class="tablinks"
+        (click)="openCity(event, 'Bookmark'); showbookmark()">
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="4"  class="tablinks"
+        (click)="openCity(event, 'setting')">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+  <ion-content id="main-book-section2">
+    <ion-row>
+      <div id="chapter" class="tabcontent" style="height: 100%">
+      </div>
+      <div id="Bookmark" class="tabcontent">
+        <!-- <div id="extras"> -->
+          <ul id="highlights" *ngFor="let highlight_item of bookmark_highlightData;" >
+            <li *ngIf="highlight_item.type else noBookmark"> <div (click)="this.rendition.display(highlight_item.location);">{{highlight_item.type}} :<p
+                >{{highlight_item.bookChapter}}</p>
+              </div>
+              <a href="javascript:void(0)"
+                (click)="deletebookmark(highlight_item.location)" class="cross-btn">X</a>
+            </li>
+            <ng-template #noBookmark>
+
+            </ng-template> 
+          </ul>
+         
+        <!-- </div> -->
+
+      </div>
+      <div id="setting" class="tabcontent" style="height: 100%">
+        <ion-row class="theme-wrap">
+          <b>Themes</b>
+          <div class="theme-container">
+            <ion-chip style="background: #fff;" id="theme_color1" class="color-theme" (click)="setTheme2('light')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+
+            <ion-chip style="background: #000; color:#fff;" class="color-theme" (click)="setTheme2('dark')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+            <ion-chip style="background: #333; color: #eee;" class="color-theme" (click)="setTheme2('blue')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+            <ion-chip style="background: #f5deb3; color: #000;" class="color-theme" (click)="setTheme2('lite_white')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+            <ion-chip style="background: #111; color: #f5deb3;" class="color-theme" (click)="setTheme2('lite_dark')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+            <ion-chip style="background: #111b21; color: #e8e8e8;" class="color-theme" (click)="setTheme2('lite_blue')">
+              <ion-label>A</ion-label>
+            </ion-chip>
+          </div>
+        </ion-row>
+        <ion-row class="font-wrap">
+          <b>Font Size</b>
+          <div class="font-container">
+            <ion-chip (click)="setFontSize('8')" id="fsize8">
+              <ion-label>8</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('9')" id="fsize9">
+              <ion-label>9</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('10')" id="fsize10">
+              <ion-label>10</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('11')" id="fsize11">
+              <ion-label>11</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('12')" id="fsize12">
+              <ion-label>12</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('13')" id="fsize13">
+              <ion-label>13</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('14')" id="fsize14">
+              <ion-label>14</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('15')" id="fsize15">
+              <ion-label>15</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('16')" id="fsize16">
+              <ion-label>16</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('17')" id="fsize17">
+              <ion-label>17</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontSize('18')" id="fsize18">
+              <ion-label>18</ion-label>
+            </ion-chip>
+          </div>
+        </ion-row>
+        <ion-row class="font-family_wrap">
+          <b>Font</b><br />
+          <div class="font-family_container">
+            <ion-chip (click)="setFontFamily('Arial')" id="ffamily_Arial">
+              <ion-label>Arial</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('FontsFree-Net-George')" id="ffamily_FontsFree-Net-George">
+              <ion-label>George</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('Lato-Regular')" id="ffamily_Lato-Regular">
+              <ion-label>Lato</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('times_new_roman')" id="ffamily_times_new_roman">
+              <ion-label>Time New Roman</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('Spectral-Regular')" id="ffamily_Spectral-Regular">
+              <ion-label>Spectral</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('LibreBaskerville-Regular')" id="ffamily_LibreBaskerville-Regular">
+              <ion-label>Libre Baskerville</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setFontFamily('Merriweather-Regular')" id="ffamily_Merriweather-Regular">
+              <ion-label>Merriweather</ion-label>
+            </ion-chip>
+          </div>
+        </ion-row>
+        <ion-row class="line-spacing_wrap">
+          <b>Line Spacing</b><br />
+          <div class="line-spacing_container">
+            <ion-chip (click)="setlineSpacing('1')" id="linespacing1" class="defaultOpen">
+              <ion-label>1</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('1.2')" id="linespacing1.2">
+              <ion-label>1.2</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('1.4')" id="linespacing1.4">
+              <ion-label>1.4</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('1.6')" id="linespacing1.6">
+              <ion-label>1.6</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('1.8')" id="linespacing1.8">
+              <ion-label>1.8</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('2')" id="linespacing2">
+              <ion-label>2</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('2.3')" id="linespacing2.3">
+              <ion-label>2.3</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('2.6')" id="linespacing2.6">
+              <ion-label>2.6</ion-label>
+            </ion-chip>
+            <ion-chip (click)="setlineSpacing('3')" id="linespacing3">
+              <ion-label>3</ion-label>
+            </ion-chip>
+          </div>
+        </ion-row>
+      </div>
+    </ion-row>
+  </ion-content>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-menu>
+<ion-content id="main-book-section">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon *ngIf="bookmarkData; else nobookmarkData" [style.color]="'#EF3B51'" name="bookmark"
+        (click)="deletebookmark(this.bookmarks_index)" style="width:30px;height:30px;padding:10px;" slot="end"
+        classs="iconFill"></ion-icon>
+      <ng-template #nobookmarkData>
+        <ion-icon name="bookmark-outline" (click)="setbookmark()" style="width:30px;height:30px;padding:10px;"
+          slot="end">
+        </ion-icon>
+      </ng-template>
+
+      <ion-menu-button menu="main-menu" auto-hide="false" style="float:right;margin-right: 10px;"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="reader-container" [ngClass]="{'nav-open' : navOpen}">
+    <div id="titlebar" [style.font-family]="font_family">
+      <div id="metainfo">
+        <span id="book-title">{{ bookTitle + (chapterTitle === bookTitle ? '' : ' - ' + chapterTitle) }}</span>
+        <span id="title-seperator">&nbsp;&nbsp;–&nbsp;&nbsp;</span>
+        <span id="chapter-title"></span>
+      </div>
+    </div>
+    <div id="divider"></div>
+    <div id="prev" class="arrow" (click)="showPrev()">‹</div>
+    <div id="viewer">
+      <!-- <ion-refresher slot="fixed" (ionRefresh)="getdataRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher> -->
+    </div>
+    <div id="next" class="arrow" (click)="showNext()">›</div>
+  </div>
+  <ng-template #expiredModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Time's Up</h4>
+    </div>
+    <div class="modal-body">
+      <h3 class="lead">If you wish you continue reading this book, please subscribe.</h3>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="pull-right btn btn-ebook" aria-label="Close"
+        (click)="onSubscribeClick()">Subscribe</button>
+    </div>
+  </ng-template>
+  <ng-template #blockedModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Restricted</h4>
+    </div>
+    <div class="modal-body">
+      <h3 class="lead">You are not allowed to view this content. Please contact your administrator.</h3>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="pull-right btn btn-ebook" aria-label="Close" (click)="onSubscribeClick()">Go to My
+        Library</button>
+    </div>
+  </ng-template>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" color="success"><ion-icon name="apps-outline"></ion-icon></ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="calculator-outline" (click)="presentModal()"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="calendar-outline" [routerLink]="['/calendarview']"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  
+    <ion-fab-list side="start">
+      <ion-fab-button>
+        <ion-icon name="document-outline" [routerLink]="['/notes']"></ion-icon>
+      </ion-fab-button>
+     
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

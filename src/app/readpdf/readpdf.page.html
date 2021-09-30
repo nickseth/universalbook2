@@ -1,0 +1,12 @@
+<ion-content>
+  <button id="pre" (click)="onPrevPage()">Privious</button>
+  <button id="next" (click)="onNextPage()">Next</button>
+  <button id="zoomIn"(click) = "onzoomIn()">+</button>
+  <button id="zoomOut" (click) = "onzoomOut()">-</button>
+ 
+<div id="flipbook">
+  <span>Page:<span id="page_num">{{currentpage}}</span>/<span id="page_count">{{ countPages }}</span></span>
+<canvas id="pdf_canvas" width="200"></canvas>
+  </div>
+ 
+</ion-content>
